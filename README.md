@@ -10,8 +10,8 @@ Image generated from this model and code is available on https://drive.google.co
 Step-1:
 ### install requirements ###
 
-!pip install --upgrade diffusers[torch]
-!pip install transformers
+          !pip install --upgrade diffusers[torch]
+          !pip install transformers              
 
 
 
@@ -19,12 +19,12 @@ Step-2:
 ### create image generation pipeline ###
 Go to Huggingface-Langchain.com --> Go to model tab --> Search "rupeshs/LCM-runwayml-stable-diffusion-v1-5" --> Copy the model paste in the program
 
-from diffusers import DiffusionPipeline
-import torch
+        from diffusers import DiffusionPipeline
+        import torch
 
 
-pipeline = DiffusionPipeline.from_pretrained("rupeshs/LCM-runwayml-stable-diffusion-v1-5", torch_dtype=torch.float16)
-pipeline.to("cuda")
+        pipeline = DiffusionPipeline.from_pretrained("rupeshs/LCM-runwayml-stable-diffusion-v1-5", torch_dtype=torch.float16)
+        pipeline.to("cuda")
 
 Step-3:
 ### generate images ###
@@ -77,9 +77,9 @@ Step-3:
 
 Step-4:
 ### upload generated zip file on Drive
-!zip -r faces.zip /content/faces
-
-from google.colab import drive
-drive.mount('/content/gdrive')
-
-!scp '/content/faces.zip' 'YOUR_DRIVE-FOLDER-PATH'
+        !zip -r faces.zip /content/faces
+        
+        from google.colab import drive
+        drive.mount('/content/gdrive')
+        
+        !scp '/content/faces.zip' 'YOUR_DRIVE-FOLDER-PATH'
